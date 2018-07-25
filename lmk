@@ -592,6 +592,7 @@ def build_html_message_body(output, command=None, returncode=None,
             try:
                 line = line.decode('utf-8')
             except AttributeError:  # str.decode() depends on Python version.
+                line = line
                 pass
             line_html = cgi.escape(line)
             html += u"""
